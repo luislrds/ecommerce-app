@@ -1,4 +1,4 @@
-import { Order } from "@/types";
+import { Item, Order } from "@/types";
 import fs from "fs/promises";
 import path from "path";
 
@@ -34,7 +34,7 @@ export default async function AdminOrdersPage() {
               <div className="mt-3">
                 <h3 className="font-medium">Productos:</h3>
                 <ul className="list-disc pl-6">
-                  {order.items.map((item: any) => (
+                  {order.items.map((item: Item) => (
                     <li key={item.id}>
                       {item.name} × {item.qty} (${item.price} c/u)
                     </li>
