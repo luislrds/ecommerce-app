@@ -1,0 +1,23 @@
+[
+  {
+    "id": "1",
+    "name": "Café Orgánico",
+    "description": "Bolsa de café molido 500g.",
+    "image": "/images/cafe.jpg",
+    "price": 120
+  },
+  {
+    "id": "2",
+    "name": "Taza de cerámica",
+    "description": "Taza blanca minimalista de 300ml.",
+    "image": "/images/taza.jpg",
+    "price": 80
+  },
+  {
+    "id": "3",
+    "name": "Filtro reutilizable",
+    "description": "Filtro ecológico para café.",
+    "image": "/images/filtro.jpg",
+    "price": 60
+  }
+]
