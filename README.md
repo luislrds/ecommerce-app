@@ -126,6 +126,25 @@ Todas las sugerencias de la IA fueron revisadas y adaptadas manualmente.
 
 ---
 
+## Decisiones técnicas clave
+
+- Se eligió Next.js con App Router para aprovechar su soporte nativo para API Routes y server components, facilitando el desarrollo fullstack en un solo proyecto.  
+- Se utilizó TypeScript para mayor seguridad de tipos y mejor mantenimiento del código.  
+- TailwindCSS fue seleccionado por su rapidez y flexibilidad para crear una UI minimalista y responsive sin salir del JSX.  
+- Para las animaciones se optó por Framer Motion, dado que permite microinteracciones fluidas con poco código.  
+- Se implementó un mockDB en memoria para persistencia local, evitando la complejidad inicial de bases de datos reales, con vistas a poder escalar a MongoDB o similar.  
+- La arquitectura se diseñó siguiendo principios de clean code y separación de responsabilidades, facilitando la modularidad y tests.  
+---
+
+## Comentarios e insights sobre usar IA como copiloto
+
+- La IA fue un gran apoyo para acelerar la generación de código base, especialmente en la creación de la estructura de carpetas, componentes y API Routes.  
+- Resultó muy útil para obtener ejemplos concretos de integración con librerías como Framer Motion y Tailwind, ahorrando tiempo de búsqueda y pruebas.  
+- Ayudó a detectar y corregir errores comunes en React y Next.js, incluyendo problemas con hooks y configuraciones de tests.  
+- Sin embargo, es necesario validar siempre el código generado y adaptarlo al contexto particular, ya que no reemplaza el conocimiento del desarrollador.  
+- En general, usar IA como copiloto permite enfocarse más en la arquitectura y experiencia del usuario, delegando tareas repetitivas  
+- Recomiendo combinar IA con buenas prácticas y revisiones para obtener los mejores resultados.
+
 ## 📄 Licencia
 
 MIT © [Luis Alberto Salazar]
