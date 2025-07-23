@@ -14,7 +14,7 @@ Aplicación de e-commerce desarrollada con Next.js (App Router), que permite sim
 - **Frontend**: Next.js 14, React, TailwindCSS
 - **Backend**: API Routes (Next.js)
 - **Lenguaje**: TypeScript
-- **Persistencia**: Archivos locales (`fs`) en `orders.json`
+- **Persistencia**: MockDB
 - **Íconos**: [Lucide](https://lucide.dev/)
 - **Pruebas**: Jest + Testing Library (opcional)
 - **Despliegue**: Vercel
@@ -51,7 +51,7 @@ Aplicación de e-commerce desarrollada con Next.js (App Router), que permite sim
 - 🧾 Página de administración de pedidos (`/admin/orders`)
 - 🎨 Estilo limpio y responsivo con Tailwind
 - 🔒 Validación en frontend y backend
-- 📁 Persistencia de pedidos en `orders.json`
+- 📁 Persistencia de pedidos en MockDB
 
 ---
 
@@ -108,7 +108,7 @@ Partes del código fueron generadas con ayuda de IA:
 - Componentes visuales como `Navbar`, `Footer`, `ProductCard`.
 - Validaciones de formularios.
 - Generación inicial de rutas y layout.
-- Persistencia en `orders.json` usando `fs`.
+- Persistencia en mockDb.
 - Correcciones de errores (hooks, tipado, async/await).
 
 Todas las sugerencias de la IA fueron revisadas y adaptadas manualmente.
