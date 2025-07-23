@@ -1,6 +1,6 @@
 import { Order } from "@/types";
 
-let orders: Order[] = [];
+const orders: Order[] = [];
 
 export function getOrders(): Order[] {
   return orders;
