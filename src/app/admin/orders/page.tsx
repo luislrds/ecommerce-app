@@ -1,8 +1,29 @@
-import { Item } from "@/types";
-import { getOrders } from "@/data/mockDb";
+"use client";
 
-export default async function AdminOrdersPage() {
-  const orders = getOrders();
+import { useEffect, useState } from "react";
+import { Item, Order } from "@/types";
+
+export default function AdminOrdersPage() {
+  const [orders, setOrders] = useState<Order[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    async function fetchOrders() {
+      try {
+        const res = await fetch("/api/orders");
+        if (!res.ok) throw new Error("Error al cargar pedidos");
+        const data = await res.json();
+        setOrders(data);
+      } catch (error) {
+        console.error(error);
+      } finally {
+        setLoading(false);
+      }
+    }
+    fetchOrders();
+  }, []);
+
+  if (loading) return <p>Cargando pedidos...</p>;
 
   return (
     <main className="max-w-5xl mx-auto p-6">
