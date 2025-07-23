@@ -49,6 +49,7 @@ Aplicación de e-commerce desarrollada con Next.js (App Router), que permite sim
 - 📋 Formulario de checkout con validación
 - ✅ Confirmación visual del pedido
 - 🧾 Página de administración de pedidos (`/admin/orders`)
+- ✨ Framer Motion para animaciones y microinteracciones
 - 🎨 Estilo limpio y responsivo con Tailwind
 - 🔒 Validación en frontend y backend
 - 📁 Persistencia de pedidos en MockDB

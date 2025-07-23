@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { Product } from "@/types";
 import { useCart } from "@/context/CartContext";
+import { motion } from "framer-motion";
 
 interface Props {
   products: Product[];
@@ -30,12 +31,15 @@ export default function ProductList({ products }: Props) {
             <h2 className="text-xl font-semibold mt-4">{product.name}</h2>
             <p className="text-gray-600">{product.description}</p>
             <p className="text-lg font-bold mt-2">${product.price} MXN</p>
-            <button
+            <motion.button
+              whileTap={{ scale: 0.9 }}          // Al hacer click se reduce un poco
+              whileHover={{ scale: 1.05 }}       // Al pasar el mouse crece un poco
+              transition={{ type: "spring", stiffness: 300, damping: 20 }} // Animación suave
               onClick={() => addToCart(product)}
               className="mt-4 w-full bg-black text-white py-2 rounded-lg hover:bg-gray-800 transition"
             >
               Agregar al carrito
-            </button>
+            </motion.button>
           </div>
         ))}
       </div>
