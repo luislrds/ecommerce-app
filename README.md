@@ -33,7 +33,7 @@ Aplicación de e-commerce desarrollada con Next.js (App Router), que permite sim
  │   └── admin/orders/page.tsx   # Vista de pedidos (admin)
  ├── components                  # Navbar, Footer, etc.
  ├── context                     # Contexto global del carrito
- ├── lib                         # Funciones de lectura/escritura (fs)
+ ├── data                        # Funciones de lectura/escritura
  ├── types                       # Tipos TS: Product, Order, etc.
  └── api
      ├── products/route.ts       # GET productos
@@ -124,8 +124,6 @@ Todas las sugerencias de la IA fueron revisadas y adaptadas manualmente.
 - [ ] Pruebas unitarias e2e
 - [ ] Migrar a base de datos real (PostgreSQL, Mongo, etc.)
 
----
-
 ## Decisiones técnicas clave
 
 - Se eligió Next.js con App Router para aprovechar su soporte nativo para API Routes y server components, facilitando el desarrollo fullstack en un solo proyecto.  
@@ -134,7 +132,6 @@ Todas las sugerencias de la IA fueron revisadas y adaptadas manualmente.
 - Para las animaciones se optó por Framer Motion, dado que permite microinteracciones fluidas con poco código.  
 - Se implementó un mockDB en memoria para persistencia local, evitando la complejidad inicial de bases de datos reales, con vistas a poder escalar a MongoDB o similar.  
 - La arquitectura se diseñó siguiendo principios de clean code y separación de responsabilidades, facilitando la modularidad y tests.  
----
 
 ## Comentarios e insights sobre usar IA como copiloto
 
