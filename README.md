@@ -5,7 +5,7 @@ Aplicación de e-commerce desarrollada con Next.js (App Router), que permite sim
 
 ## 🚀 Demo
 
-👉 [Ver aplicación desplegada en Vercel](https://tu-app.vercel.app)
+👉 [Ver aplicación desplegada en Vercel](https://ecommerce-app-xi-ten.vercel.app)
 
 ---
 
@@ -89,7 +89,7 @@ npm run dev
 Para visualizar los pedidos recibidos:
 
 1. Ve a la ruta:  
-   👉 [`/admin/orders`](https://tu-app.vercel.app/admin/orders)
+   👉 [`/admin/orders`](https://ecommerce-app-xi-ten.vercel.app/admin/orders)
 
 2. Esta página muestra una tabla con:
    - Datos del cliente (nombre, email, dirección)
