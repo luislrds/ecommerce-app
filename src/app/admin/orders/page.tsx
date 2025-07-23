@@ -1,19 +1,8 @@
-import { Item, Order } from "@/types";
-import fs from "fs/promises";
-import path from "path";
+import { Item } from "@/types";
+import { getOrders } from "@/data/mockDb";
 
-// Esto se ejecuta en el servidor (Server Component)
 export default async function AdminOrdersPage() {
-  const ordersFilePath = path.join(process.cwd(), "src/data/orders.json");
-
-  let orders: Order[] = [];
-
-  try {
-    const file = await fs.readFile(ordersFilePath, "utf-8");
-    orders = JSON.parse(file);
-  } catch (err) {
-    console.error("Error leyendo pedidos:", err);
-  }
+  const orders = getOrders();
 
   return (
     <main className="max-w-5xl mx-auto p-6">
