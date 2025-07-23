@@ -1,4 +1,3 @@
-// src/pages/api/products.ts
 import { NextApiRequest, NextApiResponse } from "next";
 import path from "path";
 import { readFile } from "fs/promises";

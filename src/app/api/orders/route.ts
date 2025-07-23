@@ -1,45 +1,24 @@
-// src/app/api/orders/route.ts
+import { NextApiRequest, NextApiResponse } from "next";
+import { addOrder, getOrders } from "@/data/mockDb";
 
-import { NextRequest, NextResponse } from "next/server";
-import { Order } from "@/types";
-import { writeFile } from "fs/promises";
-import { join } from "path";
-
-export async function POST(req: NextRequest) {
-  try {
-    const body = await req.json();
-    const { customer, items } = body as Order;
-
-    if (!customer?.name || !customer?.email || !customer?.address) {
-      return NextResponse.json({ message: "Datos del cliente incompletos" }, { status: 400 });
-    }
-
-    if (!Array.isArray(items) || items.length === 0) {
-      return NextResponse.json({ message: "El carrito está vacío" }, { status: 400 });
-    }
-
-    const orderWithTimestamp = {
-      id: Date.now(),
-      createdAt: new Date().toISOString(),
-      ...body,
-    };
-
-    const filePath = join(process.cwd(), "/src/data/orders.json");
-    const existing = [];
-
-    try {
-      const file = await import("fs/promises").then(fs => fs.readFile(filePath, "utf-8"));
-      existing.push(...JSON.parse(file));
-    } catch {
-      // No file yet
-    }
-
-    existing.push(orderWithTimestamp);
-    await writeFile(filePath, JSON.stringify(existing, null, 2));
-
-    return NextResponse.json({ message: "Pedido guardado correctamente" }, { status: 200 });
-  } catch (err) {
-    console.error(err);
-    return NextResponse.json({ message: "Error interno del servidor" }, { status: 500 });
+export default function handler(req: NextApiRequest, res: NextApiResponse) {
+  if (req.method === "GET") {
+    // Retorna todos los pedidos
+    const allOrders = getOrders();
+    return res.status(200).json(allOrders);
   }
+
+  if (req.method === "POST") {
+    try {
+      const order = req.body;
+      // Validar order aquí si quieres
+      addOrder(order);
+      return res.status(201).json({ message: "Pedido guardado" });
+    } catch (error) {
+      console.error(error);
+      return res.status(500).json({ message: "Error al guardar pedido" });
+    }
+  }
+
+  res.status(405).json({ message: "Método no permitido" });
 }
